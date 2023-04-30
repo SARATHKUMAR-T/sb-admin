@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Animations from "./Components/Animations";
+import Others from "./Components/Others";
+import Borders from "./Components/Borders";
+import Buttons from "./Components/Buttons";
+import Cards from "./Components/Cards";
+import Colors from "./Components/Colors";
+import Dashboard from "./Components/Dashboard";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/">
+          <Dashboard />
+        </Route>
+        {/* Cards */}
+        <Route path="/card">
+          <Cards />
+        </Route>
+        {/* Colors */}
+        <Route path="/color">
+          <Colors />
+        </Route>
+        {/* Buttons */}
+        <Route path="/buttons">
+          <Buttons />
+        </Route>
+        {/* Borders */}
+        <Route path="/borders">
+          <Borders />
+        </Route>
+        {/* Others */}
+        <Route path="/others">
+       <Others/>
+        </Route>
+        {/* Animations */}
+        <Route path="/animations">
+        <Animations/>
+        </Route>
+      </Switch>
     </div>
   );
 }
